@@ -1,0 +1,36 @@
+{
+  "name": "tts-democopy",
+  "version": "1.0.0",
+  "description": "TTS App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-cross23/TTS-DemoCopy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-cross23/TTS-DemoCopy/issues"
+  },
+  "homepage": "https://github.com/matt-cross23/TTS-DemoCopy#readme",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.137.0",
+    "@aws-sdk/client-polly": "^3.138.0",
+    "@aws-sdk/client-s3": "^3.32.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.137.0",
+    "@aws-sdk/node-http-handler": "^3.127.0",
+    "@aws-sdk/polly-request-presigner": "^3.138.0",
+    "@google-cloud/text-to-speech": "^4.0.0"
+  },
+  "devDependencies": {
+    "path-browserify": "^1.0.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
