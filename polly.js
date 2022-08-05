@@ -34,7 +34,7 @@ const client = new Polly({
 
 // Set the parameters
 const speechParams = {
-    OutputFormat: "mp3", // For example, 'mp3'
+    OutputFormat: "json", // For example, 'mp3'
     SampleRate: "16000", // For example, '16000
     Text: "", // The 'speakText' function supplies this value
     TextType: "text", // For example, "text"
@@ -43,7 +43,7 @@ const speechParams = {
 };
 // snippet-end:[Polly.JavaScript.BrowserExample.configV3]
 // snippet-start:[Polly.JavaScript.BrowserExample.synthesizeV3]
-const speakText = async () => {
+const speakText = async (data) => {
     // Update the Text parameter with the text entered by the user
     speechParams.Text = document.getElementById("textEntry").value;
     try{
@@ -51,6 +51,7 @@ const speakText = async () => {
             client, params: speechParams
         });
         console.log(url);
+
         // Load the URL of the voice recording into the browser
         document.getElementById('audioSource').src = url;
         document.getElementById('audioPlayback').load();
@@ -59,7 +60,25 @@ const speakText = async () => {
         console.log("Error", err);
         document.getElementById('result').innerHTML = err;
     }
-};
+}
+//   Polly.synthesizeSpeech(params, (err, data) => {
+//     if (err) {
+//         console.log(err.code);
+//     } else if (data) {
+//         if (data.AudioStream instanceof Buffer) {
+//             const buf = Buffer.from(data.AudioStream);
+//             const content = buf.toString();
+//             const lines = content.split("\n");
+//             if (!lines[lines.length -1]) {
+//                 lines.pop();
+//             }
+//             for (line of lines) {
+//                 const obj = JSON.parse(line);
+//                 console.log(obj);
+//             }
+//         }
+//     }
+// });
 // Expose the function to the browser
 window.speakText = speakText;
 // snippet-end:[Polly.JavaScript.BrowserExample.synthesizeV3]
