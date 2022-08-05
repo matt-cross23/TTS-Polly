@@ -38,7 +38,8 @@ const speechParams = {
     SampleRate: "16000", // For example, '16000
     Text: "", // The 'speakText' function supplies this value
     TextType: "text", // For example, "text"
-    VoiceId: "Matthew" // For example, "Matthew"
+    VoiceId: "Matthew", // For example, "Matthew"
+    speechMarkTypes:'["sentence", "word", "viseme", "ssml"]'
 };
 // snippet-end:[Polly.JavaScript.BrowserExample.configV3]
 // snippet-start:[Polly.JavaScript.BrowserExample.synthesizeV3]
